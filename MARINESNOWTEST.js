@@ -1,16 +1,23 @@
 let bubbles = [];
 let corals = [];
 let dust = [];
+let bgsound;
 let bg;
 
 function preload() {
   bg = loadImage("Baggrunden.png");
+  bgsound = loadSound("Ocean.mp3");
+
 }
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
   colorMode(HSB, 360, 100, 100, 100);
   generateCoral();
+  
+  //bg sounds setup
+  bgsound.setVolume(1);
+bgsound.loop();
 }
 
 function draw() {
@@ -176,6 +183,7 @@ function keyPressed() {
 }
 
 function mousePressed() {
+  userStartAudio();
   for (let i = 0; i < 5; i++) {
     bubbles.push(new Bubble(mouseX, mouseY));
   }
