@@ -25,7 +25,7 @@ let floatOffset = 0;           // Til den bløde svæve-animation
 // --- Animation ---
 let nuværendePose = 0;         // Hvilken åben pose vises (0..4)
 let sidstePoseSkift = 0;       // Hvornår skiftede vi sidst pose
-let poseTakt = 20;             // Frames mellem hvert poseskift
+let poseTakt = 900;             // Frames mellem hvert poseskift
 
 // --- Blink ---
 let blinker = false;
