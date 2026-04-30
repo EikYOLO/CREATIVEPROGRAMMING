@@ -1,7 +1,6 @@
 // ============================================================
 // SOLCREME-MASKOT MED BOBLER
-// Indsæt dette i dit eksisterende projekt
-// ============================================================
+
 
 // --- Maskot ---
 let maskot = [];               // 10 separate billedfiler
