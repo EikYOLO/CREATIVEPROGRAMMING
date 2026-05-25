@@ -1,6 +1,6 @@
 function generateCoral() {
   corals = [];
-  let count = floor(random(4, 9));
+  let count = floor(random(8, 12));
 
   let zones = [
     { x1: 0,          y1: height - 130, x2: width,        y2: height },
@@ -13,9 +13,9 @@ function generateCoral() {
     corals.push({
       x: random(z.x1, z.x2),
       y: random(z.y1, z.y2),
-      len: random(25, 70),
+      len: random(80, 90),
       baseAngle: random(-0.2, 0.2),
-      scale: random(0.6, 0.75),
+      scale: random(0.6, 0.6),
       spread: radians(random(90, 100)),
       color: color(random(0, 360), random(60, 100), random(70, 100)),
       targetSat: null,

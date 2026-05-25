@@ -133,10 +133,10 @@ for (let c of corals) {
   
   // Tjek flere punkter langs hele korallen
   let ramte = false;
-  for (let t = 0; t <= 1; t += 0.2) {
+  for (let t = 0; t <= 1; t += 0.1) {
     let tjekX = c.x;
     let tjekY = c.y - c.len * t;
-    if (dist(b.x, b.y, tjekX, tjekY) < b.størrelse / 2 + c.len * 0.8) {
+    if (dist(b.x, b.y, tjekX, tjekY) < b.størrelse / 2 + c.len * 1.5) {
       ramte = true;
       break;
     }
@@ -145,20 +145,13 @@ for (let c of corals) {
   if (ramte) {
     let skade = map(nuværendePose, 0, 4, 0.1, 1.0);
     c.health = max(0, c.health - skade);
+    score = max(0, score - 10);
     bobler.splice(i, 1);
     ramteKoral = true;
     break;
   }
 }
 if (ramteKoral) continue;
-
-// Mus fjerner stadig bobler
-if (mouseIsPressed && dist(mouseX, mouseY, b.x, b.y) < b.størrelse / 2) {
-  bobler.splice(i, 1);
-  continue;
-}
-
-
 
     // Fjern boblen hvis den er uden for skærmen
     if (b.y > height + 50 || b.y < -50 || b.x < -50 || b.x > width + 50) {

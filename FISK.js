@@ -17,11 +17,18 @@ function updateFish(f, i, currentFish) {
   let drawX = f.x - fishW / 2;
   let drawY = f.y + yOffset - fishH / 2;
 
-  if (
+if (
+    !hellig &&
     mouseX > drawX && mouseX < drawX + fishW &&
     mouseY > drawY && mouseY < drawY + fishH
   ) {
-    gameOver = true;
+    liv--;
+    if (liv <= 0) {
+      gameOver = true;
+    } else {
+      hellig = true;
+      helligTimer = 120; // 2 sekunder ved 60fps
+    }
   }
 
   push();
